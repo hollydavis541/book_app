@@ -40,8 +40,8 @@ Finish time: 09:40 AM
 Actual time needed to complete: 10 minutes  
 
 Number and name of feature: Feature #3 Browse  
-Estimate of time needed to complete: _____  
-Start time: _____  
+Estimate of time needed to complete: 90 minutes  
+Start time: 09:55 AM 
 Finish time: _____  
 Actual time needed to complete: _____  
 
