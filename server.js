@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Application Middleware
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 // API Routes
 // Renders the search form
 app.get('/', newSearch);
+app.get('/hello', getHello)
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
@@ -38,6 +39,10 @@ function Book(info) {
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
+  response.render('pages/index');
+}
+
+function getHello(request, response) {
   response.render('pages/index');
 }
 
