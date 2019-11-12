@@ -33,9 +33,9 @@ Start time: 08:00 AM
 Finish time: 09:10 AM  
 Actual time needed to complete: 70 minutes  
 
-Number and name of feature: Feature #2 API  
-Estimate of time needed to complete: _____  
-Start time: _____  
+Number and name of feature: Feature #2 Search  
+Estimate of time needed to complete: 60 minutes  
+Start time: 09:30 AM  
 Finish time: _____  
 Actual time needed to complete: _____  
 
