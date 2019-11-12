@@ -32,9 +32,15 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 // Only show part of this to get students started
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+  // convert http to https
+  let httpRegex = /^(http:\/\/)/g
 
-  this.title = info.title || 'No title available';
-
+  this.title = info.title || 'No title available'
+  this.author = info.authors? info.authors[0]: 'No author available'
+  this.isbn = info.industryIdentifiers? info.industryIdentifiers[0].identifier: 'No ISBN Number'
+  this.image_url = info.imageLinks? info.imageLinks.smallThumbnail.replace(httpRegex, 'https://'): placeholderImage
+  this.description = info.description? info.description: 'No description'
+  this.id = info.industryIdentifiers? info.industryIdentifiers[0].identifier: ''
 }
 
 // Note that .ejs file extension is not required
@@ -59,8 +65,10 @@ function createSearch(request, response) {
 
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/searches/show', {searchResults: results}));
-    // .then(results => console.log(results));
+    .then(results => response.render('pages/searches/show', {searchResults: results}))
+    .catch(err => handleError(err, response));
+}
 
-  // how will we handle errors?
+function handleError(error, response) {
+  response.render('pages/error', {error: error})
 }
