@@ -3,10 +3,15 @@
 // Application Dependencies
 const express = require('express');
 const superagent = require('superagent');
+const pg = require('pg');
 
 // Application Setup
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+//Configure Database
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('err', err => console.error(err));
 
 // Application Middleware
 app.use(express.urlencoded({extended:true}));
@@ -25,8 +30,6 @@ app.post('/searches', createSearch);
 
 // Catch-all
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
-
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
 // Only show part of this to get students started
@@ -72,3 +75,12 @@ function createSearch(request, response) {
 function handleError(error, response) {
   response.render('pages/error', {error: error})
 }
+
+// Make sure the server is listening for requests
+client.connect()
+  .then( ()=> {
+    app.listen(PORT, ()=> {
+      console.log('server and db are up, listening on port ', PORT);
+    });
+  });
+
