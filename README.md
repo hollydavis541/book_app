@@ -1,7 +1,7 @@
 # Code 301 Lab 11 - EJS  
 
-**Authors**: Holly Davis and Mark Swearingen  
-**Version**: 1.1.0
+**Authors**: Holly Davis
+**Version**: 1.5.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -18,6 +18,24 @@
 ## Change Log
 
 11-12-2019 09:10 AM - file scaffold and initial index HTML and CSS working
+
+11-12-2019 09:35 AM - updated index content to include search options
+
+11-12-2019 02:45 PM - created Book constructor and added error handler function
+
+11-13-2019 06:30 AM - updated show.ejs to include additional book information
+
+11-13-2019 08:30 AM - required postgres and configured database
+
+11-13-2019 09:00 AM - updated schema and pushed database to heroku
+
+11-13-2019 09:45 AM - fixed image reference on show.ejs and drafted renderIndex function
+
+11-13-2019 09:45 AM - fixed image reference on show.ejs and drafted renderIndex function
+
+11-13-2019 11:45 AM - refactored to use starter code as base, added template to index, readded depdencies to starter code, redrafted getBooks function
+
+11-13-2019 12:20 PM - added 2 sample table rows to database
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
@@ -40,19 +58,19 @@ Finish time: 09:40 AM
 Actual time needed to complete: 10 minutes  
 
 Number and name of feature: Feature #3 Browse  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Estimate of time needed to complete: 30 minutes  
+Start time: 02:00 PM  
+Finish time: 02:30 PM  
+Actual time needed to complete: 30 minutes  
 
 Number and name of feature: Feature #4 Errors  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Estimate of time needed to complete: 15 minutes  
+Start time: 02:30 PM  
+Finish time: 02:40 PM  
+Actual time needed to complete: 10 minutes  
 
-Number and name of feature: Feature #5 CSS  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Number and name of feature: Feature #5 Database  
+Estimate of time needed to complete: 90 minutes  
+Start time: 08:30 AM  
+Finish time: 12:00 PM  
+Actual time needed to complete: 3.5 hours (troubleshooting various issues)  
