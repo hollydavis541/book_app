@@ -1,27 +1,18 @@
 {
-  "name": "book_app",
+  "name": "book_list_app",
   "version": "1.0.0",
-  "description": "Code 301 Lab 11 - Holly Davis and Mark Swearingen",
+  "description": "Application that will allow users to upload and review books",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hollydavis541/book_app.git"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hollydavis541/book_app/issues"
-  },
-  "homepage": "https://github.com/hollydavis541/book_app#readme",
+  "author": "Code Fellows, LLC",
+  "license": "MIT",
   "dependencies": {
-    "ejs": "^2.7.1",
-    "express": "^4.17.1",
-    "pg": "^7.12.1",
-    "superagent": "^5.1.0"
+    "ejs": "^2.6.1",
+    "express": "^4.16.2",
+    "superagent": "^3.8.3"
   }
 }
