@@ -10,7 +10,11 @@
   <h3>Book API Search Results</h3>
   <ul>
     <% searchResults.forEach(item => { %>
+      <li><%= item.image_url %></li>
       <li><%= item.title %></li>
+      <li><%= item.isbn %></li>
+      <li><%= item.author %></li>
+      <li><%= item.description %></li>
     <% }) %>
   </ul>
 </body>
