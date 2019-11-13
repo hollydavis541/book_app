@@ -23,6 +23,7 @@ app.set('view engine', 'ejs');
 // API Routes
 // Renders the search form
 app.get('/', newSearch);
+// app.get('/', renderIndex);
 app.get('/hello', getHello)
 
 // Creates a new search to the Google Books API
@@ -54,6 +55,13 @@ function newSearch(request, response) {
 function getHello(request, response) {
   response.render('pages/index');
 }
+
+// function renderIndex (request, response) {
+//   let SQL = 'SELECT * FROM books;';
+//   return client.query(SQL)
+//     .then (results => response.render('pages/index', {result: results.rows, count: results.rows.length}))
+//     .catch(err => handleError(err, response));
+// }
 
 // No API key required
 // Console.log request.body and request.body.search
