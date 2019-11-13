@@ -1,12 +1,20 @@
 'use strict';
 
+require('dotenv').config();
+
 // Application Dependencies
 const express = require('express');
+const cors = require('cors');
+const pg = require('pg');
 const superagent = require('superagent');
-
-// Application Setup
-const app = express();
 const PORT = process.env.PORT || 3000;
+const app = express();
+app.use(cors());
+
+//Configure Database
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('err', err => console.error(err));
+
 
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -24,8 +32,6 @@ app.get('/books/:id', getOneBook);
 
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
-
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
 function Book(info) {
@@ -56,10 +62,11 @@ function createSearch(request, response) {
     .catch(err => handleError(err, response));
 }
 
-function getBooks() {
-  //create a SQL statement to get all books in the the database that was saved previously
-  //render the books on an EJS page
-  //catch any errors
+function getBooks(request, response) {
+  let SQL = 'SELECT * FROM books;';
+  return client.query(SQL)
+    .then (results => response.render('pages/index', {result: results.rows, count: results.rows.length}))
+    .catch(err => handleError(err, response));
 }
 
 function createBook(){
@@ -69,10 +76,16 @@ function createBook(){
 }
 
 function getOneBook(){
-  //use the id passed in from the front-end (ejs form) 
-
+  //use the id passed in from the front-end (ejs form)
 }
 
 function handleError(error, response) {
   response.render('pages/error', { error: error });
 }
+
+client.connect()
+  .then( ()=> {
+    app.listen(PORT, ()=> {
+      console.log('server and db are up, listening on port ', PORT);
+    });
+  });
