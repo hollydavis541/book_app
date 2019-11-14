@@ -76,7 +76,12 @@ function createBook(){
 }
 
 function getOneBook(){
-  //use the id passed in from the front-end (ejs form)
+  getBookshelves
+}
+
+function getBookshelves() {
+  let SQL = 'SELECT DISTINCT bookshelf FROM books ORDER BY bookshelf';
+  return client.query(SQL);
 }
 
 function handleError(error, response) {
