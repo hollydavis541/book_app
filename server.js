@@ -47,7 +47,7 @@ function Book(info) {
 }
 
 function newSearch(request, response) {
-  response.render('pages/index');
+  response.render('pages/searches/new');
 }
 
 function createSearch(request, response) {
@@ -82,7 +82,7 @@ function getOneBook(request, response){
       let SQL = 'SELECT * FROM books WHERE id=$1';
       let values = [request.params.id];
       client.query(SQL, values)
-        .then(result => response.render('pages/detail', {book: result.row[0], bookshelves: shelves.rows}))
+        .then(result => response.render('pages/books/show', {book: result.row[0], bookshelves: shelves.rows}))
         .catch(handleError);
     });
 }
