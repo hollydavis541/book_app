@@ -1,6 +1,6 @@
-# Code 301 Lab 11 - EJS  
+# Code 301 [Full Stack Book App](https://shielded-thicket-11289.herokuapp.com/)  
 
-**Authors**: Holly Davis
+**Authors**: Holly Davis  
 **Version**: 1.5.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
@@ -36,6 +36,8 @@
 11-13-2019 11:45 AM - refactored to use starter code as base, added template to index, readded depdencies to starter code, redrafted getBooks function
 
 11-13-2019 12:20 PM - added 2 sample table rows to database
+
+11-14-2019 __________ AM - ______________
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
@@ -74,3 +76,9 @@ Estimate of time needed to complete: 90 minutes
 Start time: 08:30 AM  
 Finish time: 12:00 PM  
 Actual time needed to complete: 3.5 hours (troubleshooting various issues)  
+
+Number and name of feature: Feature #6 Details  
+Estimate of time needed to complete: 90 minutes  
+Start time: 08:30 AM  
+Finish time: ____  
+Actual time needed to complete: _____  

@@ -47,7 +47,7 @@ function Book(info) {
 }
 
 function newSearch(request, response) {
-  response.render('pages/index');
+  response.render('pages/searches/new');
 }
 
 function createSearch(request, response) {
@@ -75,8 +75,24 @@ function createBook(){
 
 }
 
-function getOneBook(){
+function getOneBook(request, response){
   //use the id passed in from the front-end (ejs form)
+  getBookshelves()
+    .then( shelves => {
+      let SQL = 'SELECT * FROM books WHERE id=$1';
+      let values = [request.params.id];
+      client.query(SQL, values)
+        .then(result => {
+          console.log(result);
+          response.render('./views/pages/show.ejs', {book: result.row[0], bookshelves: shelves.rows})
+        })
+        .catch(handleError);
+    });
+}
+
+function getBookshelves() {
+  let SQL = 'SELECT DISTINCT bookshelf FROM books ORDER BY bookshelf';
+  return client.query(SQL);
 }
 
 function handleError(error, response) {

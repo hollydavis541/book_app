@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Collection</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/icons.css">
     <link rel="stylesheet" href="/styles/base.css">
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="/styles/modules/partials/header.css">
     <link rel="stylesheet" href="/styles/modules/partials/footer.css">
     <link rel="icon" type="image/png" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png">
-    <link rel="stylesheet" href="/styles/modules/searches/new.css">
+    <link rel="stylesheet" href="/styles/modules/searches/show.css">
+    <link rel="stylesheet" href="/styles/modules/books/show.css">
   </head>
   <body>
     <header>
@@ -28,24 +29,28 @@
         </ul>
       </nav>
     </header>
-      <main>
-        <h2 id="title"><span id="count"><%= count %></span> Saved Books</h2>
-        <ul class="search-results">
-          <% result.forEach(book => { %>
-            <li data-book-id="<%= book.isbn %>">
-              <div class="book-container">
-                <img src=<%= book.image_url %>>
-                <section>
-                  <h3><%= book.title %></h3>
-                  <span><%= book.author %></span>
-                  <p class="desc"><%= book.description %></p>
-                  <p><%= book.isbn %></p>
-                </section>
-              </section>
-            </li>
-            <button class="detail-button"><a href="/books/<%= book.id %>">View Details</a></button>
-          <% }) %>
+    <main>
+
+      <!-- Credit for following layout and explaing the use of "result" below because it uses "result" form getOneBook to Trevor Thompson -->
+      <!-- <h2 id="title">Detail View</h2>
+  
+      <ul id="result-container">
+          <div class="books">
+             <li id="image"><img src="<%= result.image_url %>"</li>
+             <li id="book-title"><%= result.title %></li>
+             <li id="author"><%= result.author %></li>
+             <li id="description"><%= result.description %></li>
+             <li><%= result.isbn %></li>
+             <li><%= result.bookshelf %></li>
+          </div>
         </ul>
+        <div id="button-wrapper">
+            <button class="detail-button"><a href="/">Home Page</a></button>
+        </div> -->
+
+        <h1>Test</h1>
+
+
     </main>
     <footer>
       <ul>
