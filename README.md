@@ -74,3 +74,9 @@ Estimate of time needed to complete: 90 minutes
 Start time: 08:30 AM  
 Finish time: 12:00 PM  
 Actual time needed to complete: 3.5 hours (troubleshooting various issues)  
+
+Number and name of feature: Feature #6 Details  
+Estimate of time needed to complete: 90 minutes  
+Start time: 08:30 AM  
+Finish time: ____  
+Actual time needed to complete: _____  
