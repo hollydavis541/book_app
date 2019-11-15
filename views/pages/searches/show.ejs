@@ -42,9 +42,23 @@
                 <p class="desc"><%= book.description %></p>        
               </section>
             </section>
+            <button class="select-button" type="submit">Select This Book</button>
           </li>
         <% }) %>
       </ul>
+
+      <section class="hide-me" id="hidden-form">
+        <form action="/books" method="post" class="form-container">
+            <input type="text" name="title" value="<%= item.title %>" required>
+            <input type="text" name="author" value="<%= item.author %>" required>
+            <input type="text" name="isbn" value="<%= item.isbn %>" required>
+            <input type="text" name="image_url" value="<%= item.image_url %>" required>
+            <input type="text" name="description" value="<%= item.description %>" required>
+            <input type="text" name="bookshelf" value="<%= item.bookshelf %>" required>
+            <button type="submit" class="add-button">Add to Database</button>
+        </form>
+      </section>
+
     </main>
     <footer>
       <ul>

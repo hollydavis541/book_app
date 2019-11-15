@@ -58,6 +58,10 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 
 11-14-2019 11:15 AM - moved search to new page, added saved books count to index, added view details button
 
+11-15-2019 ______ AM - placeholder
+
+11-15-2019 ______ AM - placeholder
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.-->
@@ -101,3 +105,9 @@ Estimate of time needed to complete: 90 minutes
 Start time: 08:30 AM  
 Finish time: 12:30 PM  
 Actual time needed to complete: 4 hours (troubleshooting various issues)  
+
+Number and name of feature: Feature #7 Reveal  
+Estimate of time needed to complete: 60 minutes  
+Start time: ______ AM  
+Finish time: ______ AM  
+Actual time needed to complete: ______ AM  
