@@ -25,12 +25,12 @@ app.set('view engine', 'ejs');
 
 // API Routes
 app.get('/', getBooks)
-app.post('/searches', searchResults);
 app.get('/searches/new', searchForm);
+app.post('/searches', searchResults);
 app.post('/books', saveBook)
 app.get('/books/:id', getDetails);
-// app.put('/books/:id', updateBook);
-// app.delete('/books/:id', deleteBook);
+app.put('/books/:id', updateBook);
+app.delete('/books/:id', deleteBook);
 
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
@@ -48,22 +48,7 @@ function Book(info) {
   this.id = info.industryIdentifiers ? `${info.industryIdentifiers[0].identifier}` : '';
 }
 
-function searchForm(request, response) {
-  response.render('pages/searches/new');
-}
-
-function searchResults(request, response) {
-  let url = 'https://www.googleapis.com/books/v1/volumes?q=';
-
-  if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}`; }
-  if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
-
-  superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/searches/show', { searchResults: results }))
-    .catch(err => handleError(err, response));
-}
-
+// Retrieves any books currently in the database and displays them on the index home page
 function getBooks(request, response) {
   let SQL = 'SELECT * FROM books;';
   return client.query(SQL)
@@ -71,6 +56,23 @@ function getBooks(request, response) {
     .catch(err => handleError(err, response));
 }
 
+// Renders the search form on the search page (searches/new.ejs)
+function searchForm(request, response) {
+  response.render('pages/searches/new');
+}
+
+// Gets information from the Google Books API based on what the user searched for and renders those search results to the results page (searches/show.ejs)
+function searchResults(request, response) {
+  let url = 'https://www.googleapis.com/books/v1/volumes?q=';
+  if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}`; }
+  if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
+  superagent.get(url)
+    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
+    .then(results => response.render('pages/searches/show', { searchResults: results }))
+    .catch(err => handleError(err, response));
+}
+
+// Allows the user to save a book to the database
 function saveBook(request, response) {
   let lcBookshelf = request.body.bookshelf.toLowerCase();
   let {title, author, isbn, image_url, description} = request.body;
@@ -81,8 +83,8 @@ function saveBook(request, response) {
     .catch(handleError);
 }
 
+// Allows the user to view details about the book
 function getDetails(request, response){
-  //use the id passed in from the front-end (ejs form)
   getBookshelves()
     .then( shelves => {
       let SQL = 'SELECT * FROM books WHERE id=$1;';
@@ -99,6 +101,16 @@ function getDetails(request, response){
 function getBookshelves() {
   let SQL = 'SELECT DISTINCT bookshelf FROM books ORDER BY bookshelf;';
   return client.query(SQL);
+}
+
+// Allows user to update book information in the database
+function updateBook(request, response) {
+  //
+}
+
+// Allows user to delete a book from the database
+function deleteBook(request, response) {
+  //
 }
 
 function handleError(error, response) {
