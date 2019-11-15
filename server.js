@@ -20,6 +20,17 @@ client.on('err', err => console.error(err));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+// Post Method Override (in order to use PUT and DELETE)
+// https://github.com/expressjs/method-override
+app.use(methodOverride((request, response) => {
+  if (request.body && typeof request.body === 'object' && '_method' in request.body) {
+    let method = request.body._method;
+    delete request.body._method;
+    return method;
+  }
+}));
+
+
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 
@@ -92,7 +103,7 @@ function getDetails(request, response){
       client.query(SQL, values)
         .then(result => {
           console.log(result);
-          response.render('pages/books/show', {book: result.rows[0], bookshelves: shelves.rows})
+          response.render('pages/books/detail', {book: result.rows[0], bookshelves: shelves.rows})
         })
     })
     .catch(handleError);
