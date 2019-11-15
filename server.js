@@ -7,7 +7,7 @@ const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
 const superagent = require('superagent');
-const methodOverride = ('method-override');
+const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
