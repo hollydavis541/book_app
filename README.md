@@ -58,7 +58,9 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 
 11-14-2019 11:15 AM - moved search to new page, added saved books count to index, added view details button
 
-11-15-2019 ______ AM - placeholder
+11-14-2019 10:45 PM - created hidden form on search results page
+
+11-15-2019 09:00 AM - created function to save book to the database
 
 11-15-2019 ______ AM - placeholder
 
@@ -70,44 +72,50 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 
-Number and name of feature: Feature #1 Setup  
+Number and name of feature: Feature #1 File Scaffolding  
 Estimate of time needed to complete: 60 minutes  
 Start time: 08:00 AM  
 Finish time: 09:10 AM  
 Actual time needed to complete: 70 minutes  
 
-Number and name of feature: Feature #2 Search  
+Number and name of feature: Feature #2 Search Form Setup  
 Estimate of time needed to complete: 20 minutes  
 Start time: 09:30 AM  
 Finish time: 09:40 AM  
 Actual time needed to complete: 10 minutes  
 
-Number and name of feature: Feature #3 Browse  
+Number and name of feature: Feature #3 Google API Connection  
 Estimate of time needed to complete: 30 minutes  
 Start time: 02:00 PM  
 Finish time: 02:30 PM  
 Actual time needed to complete: 30 minutes  
 
-Number and name of feature: Feature #4 Errors  
+Number and name of feature: Feature #4 Handle Errors  
 Estimate of time needed to complete: 15 minutes  
 Start time: 02:30 PM  
 Finish time: 02:40 PM  
 Actual time needed to complete: 10 minutes  
 
-Number and name of feature: Feature #5 Database  
+Number and name of feature: Feature #5 Create Book Database  
 Estimate of time needed to complete: 90 minutes  
 Start time: 08:30 AM  
 Finish time: 12:00 PM  
 Actual time needed to complete: 3.5 hours (troubleshooting various issues)  
 
-Number and name of feature: Feature #6 Details  
+Number and name of feature: Feature #6 View Book Details  
 Estimate of time needed to complete: 90 minutes  
 Start time: 08:30 AM  
 Finish time: 12:30 PM  
 Actual time needed to complete: 4 hours (troubleshooting various issues)  
 
-Number and name of feature: Feature #7 Reveal  
+Number and name of feature: Feature #7 Hidden Update Form and Reveal Button 
 Estimate of time needed to complete: 60 minutes  
-Start time: ______ AM  
-Finish time: ______ AM  
-Actual time needed to complete: ______ AM  
+Start time: 10:00 PM  
+Finish time: 10:45 PM  
+Actual time needed to complete: 45 minutes  
+
+Number and name of feature: Feature #8 Save Book to Database  
+Estimate of time needed to complete: 60 minutes  
+Start time: 08:30 AM  
+Finish time: 09:00 AM  
+Actual time needed to complete: 30 minutes  

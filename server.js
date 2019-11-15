@@ -24,11 +24,13 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // API Routes
-app.get('/', getBooks) //define route to get all books
-app.get('/searches/new', newSearch);
-app.post('/searches', createSearch);
-app.post('/books', createBook)
-app.get('/books/:id', getOneBook);
+app.get('/', getBooks)
+app.post('/searches', searchResults);
+app.get('/searches/new', searchForm);
+app.post('/books', saveBook)
+app.get('/books/:id', getDetails);
+// app.put('/books/:id', updateBook);
+// app.delete('/books/:id', deleteBook);
 
 
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
@@ -46,11 +48,11 @@ function Book(info) {
   this.id = info.industryIdentifiers ? `${info.industryIdentifiers[0].identifier}` : '';
 }
 
-function newSearch(request, response) {
+function searchForm(request, response) {
   response.render('pages/searches/new');
 }
 
-function createSearch(request, response) {
+function searchResults(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
 
   if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}`; }
@@ -69,13 +71,17 @@ function getBooks(request, response) {
     .catch(err => handleError(err, response));
 }
 
-function createBook(){
-  //create a SQL statement to insert book
-  //return id of book back to calling function
-
+function saveBook(request, response) {
+  let lcBookshelf = request.body.bookshelf.toLowerCase();
+  let {title, author, isbn, image_url, description} = request.body;
+  let SQL = 'INSERT INTO books (title, author, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;';
+  let values = [title, author, isbn, image_url, description, lcBookshelf];
+  client.query(SQL, values)
+    .then(result => response.redirect(`/books/${result.rows[0].id}`))
+    .catch(handleError);
 }
 
-function getOneBook(request, response){
+function getDetails(request, response){
   //use the id passed in from the front-end (ejs form)
   getBookshelves()
     .then( shelves => {
