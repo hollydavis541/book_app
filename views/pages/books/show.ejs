@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../layout/head') %>
-    <link rel="stylesheet" href="/styles/modules/searches/show.css">
-    <link rel="stylesheet" href="/styles/modules/books/show.css">
-  </head>
-  <body>
-    <%- include('../../layout/header') %>
-    <main>
+<head>
+  <%- include('../../layout/head') %>
+  <link rel="stylesheet" href="/styles/modules/books/show.css">
+</head>
+<body>
+  <%- include('../../layout/header') %>
+  <main>
+    <!-- Credit for following layout and explaing the use of "result" below because it uses "result" form getOneBook to Trevor Thompson -->
+    <h2 id="title">Detail View</h2>
 
-      <!-- Credit for following layout and explaing the use of "result" below because it uses "result" form getOneBook to Trevor Thompson -->
-      <h2 id="title">Detail View</h2>
-  
-      <ul id="result-container">
-          <div class="books">
-             <li id="image"><img src="<%= book.image_url %>"</li>
-             <li id="book-title"><%= book.title %></li>
-             <li id="author"><%= book.author %></li>
-             <li id="description"><%= book.description %></li>
-             <li><%= book.isbn %></li>
-             <li><%= book.bookshelf %></li>
-          </div>
-        </ul>
-        <div id="button-wrapper">
-            <button class="detail-button"><a href="/">Home Page</a></button>
-        </div>
+    <ul id="result-container">
+      <div class="books">
+        <li id="image"><img src="<%= book.image_url %>" </li> <li id="book-title"><%= book.title %></li>
+        <li id="author"><%= book.author %></li>
+        <li id="description"><%= book.description %></li>
+        <li><%= book.isbn %></li>
+        <li><%= book.bookshelf %></li>
+      </div>
+    </ul>
+    <div id="button-wrapper">
+      <button class="detail-button"><a href="/">Home Page</a></button>
+    </div>
 
-    </main>
-    <%- include('../../layout/footer') %>
-  </body>
+  </main>
+  <%- include('../../layout/footer') %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="../../../public/js/app.js"></script>
+</body>
 </html>
