@@ -105,7 +105,12 @@ function getBookshelves() {
 
 // Allows user to update book information in the database
 function updateBook(request, response) {
-  //
+  let {title, author, isbn, image_url, description, bookshelf} = request.body;
+  let SQL = 'UPDATE books SET title=$1, author=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7';
+  let values = [title, author, isbn, image_url, description, bookshelf, request.params.id];
+  client.query(SQL, values)
+    .then(response.redirect(`/books/${request.params.id}`))
+    .catch(handleError);
 }
 
 // Allows user to delete a book from the database
