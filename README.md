@@ -60,7 +60,7 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 
 11-14-2019 10:45 PM - created hidden form on search results page
 
-11-15-2019 ______ AM - placeholder
+11-15-2019 09:00 AM - created function to save book to the database
 
 11-15-2019 ______ AM - placeholder
 
@@ -117,5 +117,5 @@ Actual time needed to complete: 45 minutes
 Number and name of feature: Feature #8 Save Book to Database  
 Estimate of time needed to complete: 60 minutes  
 Start time: 08:30 AM  
-Finish time: _____ AM  
-Actual time needed to complete:  
+Finish time: 09:00 AM  
+Actual time needed to complete: 30 minutes  
