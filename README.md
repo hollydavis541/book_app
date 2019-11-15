@@ -122,8 +122,14 @@ Start time: 08:30 AM
 Finish time: 09:00 AM  
 Actual time needed to complete: 30 minutes  
 
-Number and name of feature: Feature #9 Upate/Delete Book Info in Database  
+Number and name of feature: Feature #9 Update/Delete Book Info in Database  
 Estimate of time needed to complete: 60 minutes  
 Start time: 09:00 AM  
 Finish time: 10:00 AM  
 Actual time needed to complete: 60 minutes  
+
+Number and name of feature: Feature #10 ESJ File Cleanup  
+Estimate of time needed to complete: 90 minutes  
+Start time: 11:00 AM  
+Finish time: _____ AM  
+Actual time needed to complete: _____ minutes  
