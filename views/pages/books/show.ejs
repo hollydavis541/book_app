@@ -1,34 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/modules/error.css">
-    <link rel="stylesheet" href="/styles/modules/partials/header.css">
-    <link rel="stylesheet" href="/styles/modules/partials/footer.css">
-    <link rel="icon" type="image/png" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png">
+    <%- include('../../layout/head') %>
     <link rel="stylesheet" href="/styles/modules/searches/show.css">
     <link rel="stylesheet" href="/styles/modules/books/show.css">
   </head>
   <body>
-    <header>
-      <div>
-        <a href="/">
-          <h1>Best Books!</h1>
-        </a>
-      </div>
-      <nav>
-        <div class="icon-menu"></div>
-        <ul>
-          <li><a href="/">Home</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('../../layout/header') %>
     <main>
 
       <!-- Credit for following layout and explaing the use of "result" below because it uses "result" form getOneBook to Trevor Thompson -->
@@ -49,13 +27,6 @@
         </div>
 
     </main>
-    <footer>
-      <ul>
-        <li><span class="icon-mail2"><a href=""></a></span></li>
-        <li><span class="icon-twitter"><a href=""></a></span></li>
-        <li><span class="icon-github"><a href=""></a></span></li>
-        <li><span class="icon-linkedin2"><a href=""></a></span></li>
-      </ul>
-    </footer>
+    <%- include('../../layout/footer') %>
   </body>
 </html>
