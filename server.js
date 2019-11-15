@@ -7,6 +7,7 @@ const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
 const superagent = require('superagent');
+const methodOverride = ('method-override');
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
@@ -29,7 +30,6 @@ app.use(methodOverride((request, response) => {
     return method;
   }
 }));
-
 
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
