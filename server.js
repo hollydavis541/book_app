@@ -103,7 +103,7 @@ function getDetails(request, response){
       client.query(SQL, values)
         .then(result => {
           console.log(result);
-          response.render('pages/books/detail', {book: result.rows[0], bookshelves: shelves.rows})
+          response.render('pages/books/show', {book: result.rows[0], bookshelves: shelves.rows})
         })
     })
     .catch(handleError);

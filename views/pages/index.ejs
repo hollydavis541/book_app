@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <%- include('../layout/head') %>
-  <link rel="stylesheet" href="/styles/modules/searches/new.css">
+  <link rel="stylesheet" href="../../public/styles/modules/books/show.css">
 </head>
 <body>
   <%- include('../layout/header') %>
   <main>
-    <h2 id="title"><span id="count"><%= count %></span> Saved Books</h2>
+    <!-- <h2 id="title"><span id="count"><%= count %></span> Saved Books</h2>
     <ul class="search-results">
       <% result.forEach(book => { %>
       <li data-book-id="<%= book.isbn %>">
@@ -22,6 +22,17 @@
           </section>
       </li>
       <button class="detail-button"><a href="/books/<%= book.id %>">View Details</a></button>
+      <% }) %>
+    </ul> -->
+
+    <h4>Saved Books</h4>
+    <p><span id="count"><%= count %></span> saved books</p>
+    <ul id="book-list">
+      <% result.forEach(book => { %>
+        <li class="book-items" data-book-id="<%= book.id %>">
+          <%- include('books/detail', {book: book}) %>
+          <p class="detail-button"><a href="/books/<%= book.id %>">View Details</a></p>
+        </li>
       <% }) %>
     </ul>
   </main>
