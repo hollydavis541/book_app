@@ -1,0 +1,12 @@
+<img src="<%= book.image_url %>" alt="image of book cover">
+<h3><%= book.title %><% if (book.subtitle) { %>: <%= book.subittle %> <% } %></h3>
+<span><%= book.author %></span>
+<p class="desc unlist"><%= book.description %></p>
+<p class="isbn">
+  <%= book.isbn %>
+  <% if (book.bookshelf) { %>
+  &mdash;
+  Bookshelf;
+  <%= book.bookshelf %>
+  <% } %>
+</p>

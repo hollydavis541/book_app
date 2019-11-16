@@ -1,61 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/modules/error.css">
-    <link rel="stylesheet" href="/styles/modules/partials/header.css">
-    <link rel="stylesheet" href="/styles/modules/partials/footer.css">
-    <link rel="icon" type="image/png" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png">
-    <link rel="stylesheet" href="/styles/modules/searches/show.css">
-    <link rel="stylesheet" href="/styles/modules/books/show.css">
-  </head>
-  <body>
-    <header>
-      <div>
-        <a href="/">
-          <h1>Best Books!</h1>
-        </a>
-      </div>
-      <nav>
-        <div class="icon-menu"></div>
-        <ul>
-          <li><a href="/">Home</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
 
-      <!-- Credit for following layout and explaing the use of "result" below because it uses "result" form getOneBook to Trevor Thompson -->
-      <h2 id="title">Detail View</h2>
-  
-      <ul id="result-container">
-          <div class="books">
-             <li id="image"><img src="<%= book.image_url %>"</li>
-             <li id="book-title"><%= book.title %></li>
-             <li id="author"><%= book.author %></li>
-             <li id="description"><%= book.description %></li>
-             <li><%= book.isbn %></li>
-             <li><%= book.bookshelf %></li>
-          </div>
-        </ul>
-        <div id="button-wrapper">
-            <button class="detail-button"><a href="/">Home Page</a></button>
-        </div>
+<head>
+  <%- include('../../layout/head') %>
+  <link rel="stylesheet" href="/styles/modules/books/show.css">
+</head>
 
-    </main>
-    <footer>
-      <ul>
-        <li><span class="icon-mail2"><a href=""></a></span></li>
-        <li><span class="icon-twitter"><a href=""></a></span></li>
-        <li><span class="icon-github"><a href=""></a></span></li>
-        <li><span class="icon-linkedin2"><a href=""></a></span></li>
-      </ul>
-    </footer>
-  </body>
+<body>
+  <%- include('../../layout/header') %>
+  <main>
+    <%- include('detail', {book: book}) %>
+    <button id="update-button">Update Details</button>
+    <%- include('edit', {book: book, bookshelves: bookshelves, formAction: 'update'}) %>
+    <form action="/books/<%= book.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button id="delete-button">Delete Book</button>
+    </form>
+  </main>
+  <%- include('../../layout/footer') %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+
 </html>

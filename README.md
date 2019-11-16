@@ -1,7 +1,7 @@
 # Code 301 [Full Stack Book App](https://shielded-thicket-11289.herokuapp.com/)  
 
 **Authors**: Holly Davis  
-**Version**: 1.6.0
+**Version**: 1.10.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -64,7 +64,7 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 
 11-15-2019 10:00 AM - created functions to update/delete books from database
 
-11-15-2019 ______ AM - placeholder
+11-16-2019 03:00 PM - correct buttons showing on each page and show/hide functions working
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
@@ -122,8 +122,14 @@ Start time: 08:30 AM
 Finish time: 09:00 AM  
 Actual time needed to complete: 30 minutes  
 
-Number and name of feature: Feature #9 Upate/Delete Book Info in Database  
+Number and name of feature: Feature #9 Update/Delete Book Info in Database  
 Estimate of time needed to complete: 60 minutes  
 Start time: 09:00 AM  
 Finish time: 10:00 AM  
 Actual time needed to complete: 60 minutes  
+
+Number and name of feature: Feature #10 ESJ File Cleanup  
+Estimate of time needed to complete: 90 minutes  
+Start time: 11:00 AM  
+Finish time: 03:00 PM  
+Actual time needed to complete: 4 hours  
