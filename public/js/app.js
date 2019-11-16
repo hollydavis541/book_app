@@ -1,9 +1,12 @@
 'use strict';
 
+// Hides update/save form on search results page until select button is clicked
 $('.select-button').on('click', function() {
   $(this).next().removeClass('hide-me');
 });
 
-$('#update-button').on('click', function() {
+// Hides update/save form on book details page until update button is clicked
+$('.unlist').on('click', function() {
   $(this).next().removeClass('hide-me');
 });
+
