@@ -6,7 +6,6 @@ $('.select-button').on('click', function() {
 });
 
 // Hides update/save form on book details page until update button is clicked
-$('.unlist').on('click', function() {
+$('#update-button').on('click', function() {
   $(this).next().removeClass('hide-me');
 });
-

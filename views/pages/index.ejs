@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('../layout/head') %>
   <link rel="stylesheet" href="styles/modules/books/show.css">
 </head>
+
 <body>
   <%- include('../layout/header') %>
   <main>
     <h4>Saved Books</h4>
     <p><span id="count"><%= count %></span> saved books</p>
-    <ul id="book-list">
+    <ul>
       <% result.forEach(book => { %>
-        <li class="book-items" data-book-id="<%= book.id %>">
-          <%- include('books/detail', {book: book}) %>
+      <li class="book-items" data-book-id="<%= book.id %>">
+        <section class="book-container detail-view">
+          <img src="<%= book.image_url %>" alt="image of book cover">
+          <h3><%= book.title %><% if (book.subtitle) { %>: <%= book.subittle %> <% } %></h3>
+          <span><%= book.author %></span>
+          <p class="isbn">
+            <%= book.isbn %>
+            <% if (book.bookshelf) { %>
+            &mdash;
+            Bookshelf:
+            <%= book.bookshelf %>
+            <% } %>
+          </p>
           <p class="detail-button"><a href="/books/<%= book.id %>">View Details</a></p>
-        </li>
+        </section>
+      </li>
       <% }) %>
     </ul>
   </main>
   <%- include('../layout/footer') %>
 </body>
+
 </html>

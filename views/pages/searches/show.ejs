@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('../../layout/head') %>
   <link rel="stylesheet" href="styles/modules/searches/show.css">
   <link rel="stylesheet" href="styles/modules/books/show.css">
 </head>
+
 <body>
   <%- include('../../layout/header') %>
   <main>
     <h4>Search Results</h4>
-    <ul id="book-list" class="search-results">
+    <ul>
       <% searchResults.forEach(book => { %>
       <li data-book-id="<%= book.isbn %>">
-        <%- include('../books/detail', {book: book}) %>
-        <button class="select-button">Select This Book</button>
-        <%- include('../books/edit', {book: book, bookshelves: null, formAction: 'create'}) %>
+        <section class="book-container detail-view">
+          <%- include('../books/detail', {book: book}) %>
+          <button class="select-button">Select This Book</button>
+          <%- include('../books/edit', {book: book, bookshelves: null, formAction: 'create'}) %>
+        </section>
       </li>
       <% }) %>
     </ul>
@@ -23,4 +27,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/app.js"></script>
+
 </html>
