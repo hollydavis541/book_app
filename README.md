@@ -66,13 +66,15 @@ This is a full stack application that uses express, dotenv, pg, superagent, ejs,
 
 11-16-2019 03:00 PM - correct buttons showing on each page and show/hide functions working
 
+11-17-2019 11:15 AM - styling updated and Google font added
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.-->
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-
+Much appreciation to my awesome cohort members and instructional team who are great rubber ducks and help me when I get stuck.
 
 Number and name of feature: Feature #1 File Scaffolding  
 Estimate of time needed to complete: 60 minutes  
@@ -133,3 +135,9 @@ Estimate of time needed to complete: 90 minutes
 Start time: 11:00 AM  
 Finish time: 03:00 PM  
 Actual time needed to complete: 4 hours  
+
+Number and name of feature: Feature #11 Styling  
+Estimate of time needed to complete: 90 minutes  
+Start time: 09:15 AM  
+Finish time: 11:15 AM  
+Actual time needed to complete: 2 hours  

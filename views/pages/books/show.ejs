@@ -9,13 +9,15 @@
 <body>
   <%- include('../../layout/header') %>
   <main>
-    <%- include('detail', {book: book}) %>
-    <button id="update-button">Update Details</button>
-    <%- include('edit', {book: book, bookshelves: bookshelves, formAction: 'update'}) %>
-    <form action="/books/<%= book.id %>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button id="delete-button">Delete Book</button>
-    </form>
+    <section class="book-container detail-view">
+      <%- include('detail', {book: book}) %>
+      <button id="update-button">Update Details</button>
+      <%- include('edit', {book: book, bookshelves: bookshelves, formAction: 'update'}) %>
+      <form action="/books/<%= book.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button id="delete-button">Delete Book</button>
+      </form>
+    </section>
   </main>
   <%- include('../../layout/footer') %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
