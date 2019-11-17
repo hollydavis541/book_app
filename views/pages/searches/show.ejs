@@ -16,7 +16,7 @@
       <li data-book-id="<%= book.isbn %>">
         <section class="book-container detail-view">
           <%- include('../books/detail', {book: book}) %>
-          <button class="select-button">Select This Book</button>
+          <button id="select-button" class="select-button">Select This Book</button>
           <%- include('../books/edit', {book: book, bookshelves: null, formAction: 'create'}) %>
         </section>
       </li>

@@ -47,6 +47,7 @@ input, textarea {
   margin: 2vw auto;
   padding: 1vw;
   width: 80%;
+  background-color: lightgray;
 }
 
 input[type="text"],
@@ -81,19 +82,21 @@ textarea:focus {
 
 button {
   display: block;
-  font-size: 4vw;
+  font-size: 3vw;
   margin: 0 auto;
   padding: 2vw;
   width: 40%;
+  border-radius: 10px;
+  background-color: goldenrod;
 }
 
 button[type="submit"] {
   padding: 3vw;
   background: #000;
-  color: #fff;
-  font-size: 4vw;
+  color:white;
+  font-size: 3vw;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -135,8 +138,10 @@ h3 {
 h4 {
   font-size: 4vw;
   padding: 5vw 2vw;
-  color: #ccc;
-  background: #444;
+  color: white;
+  background: darkred;
   text-align: center;
   text-decoration: none; 
+  font-family: 'Special Elite', cursive;
+  letter-spacing: 1px;
 }
